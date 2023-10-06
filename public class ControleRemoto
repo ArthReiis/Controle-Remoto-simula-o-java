@@ -1,0 +1,61 @@
+/*PRINCIPAL*/
+
+package atividadeencap2;
+
+import java.util.Scanner;
+
+public class ControleRemoto {
+
+	public static void main(String[] args) {
+		Televisao teve = new Televisao(1, 50);
+		Scanner leia = new Scanner(System.in);
+		int opcao;
+		do {
+			System.out.println("====== Controle Remoto ======");
+			System.out.println("0 - Sair");
+			System.out.println("1 - Aumentar Volume da TV");
+			System.out.println("2 - Diminuir Volume da TV");
+			System.out.println("3 - Próximo canal");
+			System.out.println("4 - Canal anterior");
+			System.out.println("5 - Inserir um canal");
+			System.out.println("6 - Consultar volume e canal");
+			System.out.println("=============================");
+			opcao = leia.nextInt();
+			
+			switch (opcao) {
+			case 1: {
+				teve.aumentarVol();
+				System.out.println(teve.getVolume());
+				break;
+			}
+
+			case 2: {
+
+				teve.diminuirVol();
+				System.out.println(teve.getVolume());
+				break;
+			}
+
+			case 3: {
+				teve.aumentarCanal();
+				System.out.println(teve.getCanal());
+				break;
+			}
+
+			case 4: {
+				teve.diminuirCanal();
+				System.out.println(teve.getCanal());
+				break;
+			}
+
+			case 5: {
+				teve.trocarCanal();
+				System.out.println(teve.getCanal());
+				break;
+			}
+			default:
+				System.err.println("Opção inválida, digite novamente");
+			}
+		} while (opcao != 0);
+	}
+}
