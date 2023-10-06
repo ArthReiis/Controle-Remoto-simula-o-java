@@ -1,0 +1,65 @@
+package atividadeencap2;
+
+import java.util.Scanner;
+
+public class Televisao {
+
+	Scanner leia = new Scanner(System.in);
+	private int volume;
+	private int canal;
+
+	public Televisao(int volume, int canal) {
+		this.volume = volume;
+		this.canal = canal;
+	}
+
+	public int getVolume() {
+		return volume;
+	}
+
+	public void aumentarVol() {
+
+		if (volume >= 100) {
+			System.err.println("Não foi possível aumentar o volume");
+		} else {
+			volume++;
+		}
+	}
+
+	public void diminuirVol() {
+
+		if (volume <= 0) {
+			System.err.println("Não foi possível diminuir o volume");
+		} else {
+			volume--;
+		}
+
+	}
+
+	public int getCanal() {
+		return canal;
+	}
+
+	public void aumentarCanal() {
+		canal++;
+	}
+
+	public void diminuirCanal() {
+		if (canal <= 0) {
+			System.err.println("Não foi possível diminuir o canal");
+		} else {
+			canal--;
+		}
+	}
+
+	public int trocarCanal() {
+		System.out.println("Digite o canal desejado");
+		int resultado = leia.nextInt();
+		return canal = resultado;
+	}
+
+	public void consulta() {
+		System.out.println(volume);
+		System.out.println(canal);
+	}
+}
